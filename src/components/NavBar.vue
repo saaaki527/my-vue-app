@@ -1,16 +1,4 @@
-<template>
-  <div class="nav__bar">
-    <router-link to="/" class="nav__logo nav__link">食材ピッカー</router-link>
-    <div class="nav__items">
-      <router-link to="/about" class="nav__item nav__link"
-        >食材追加</router-link
-      >
-      <router-link to="/my-page" class="nav__item nav__link">
-        Memo
-      </router-link>
-    </div>
-  </div>
-</template>
+<template></template>
 
 <script>
 export default {}
