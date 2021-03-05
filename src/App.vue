@@ -2,15 +2,18 @@
   <div>
     <NavBar />
     <router-view />
+    <!-- <FoodsList /> -->
   </div>
 </template>
 
 <script>
 import NavBar from "@/components/NavBar.vue"
+// import FoodsList from "@/components/FoodsList.vue"
 
 export default {
   components: {
     NavBar,
+    // FoodsList,
   },
 }
 </script>

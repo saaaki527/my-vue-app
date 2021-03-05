@@ -1,6 +1,11 @@
 <template>
   <div class="form__wrapper">
-    <input type="text" v-model="text" class="form__input" />
+    <input
+      type="text"
+      v-model="text"
+      class="form__input"
+      v-on:keyup.enter="addFood"
+    />
     <button v-on:click="addList" class="addBtn">追加する</button>
     <div v-for="(T, i) in list" v-bind:key="i">{{ T }}</div>
   </div>

@@ -1,16 +1,19 @@
 <template>
-  <div class="form__wrapper">
-    <div class="main-text">「この食材使ってごはん作ってみたら？」を提案</div>
-    <div class="sub-text">
-      自炊してみたいけど何から作ればいいかわからない...自炊のメニューがいつも同じで飽きた...という人に
+  <div class="all__wrapper">
+    <div class="description">
+      <div class="main-text">「この食材使ってごはん作ってみたら？」を提案</div>
+      <div class="sub-text">
+        自炊してみたいけど何から作ればいいかわからない...自炊のメニューがいつも同じで飽きた...という人に
+      </div>
+      <button v-on:click="adviseFood" class="adviseBtn">
+        今日の食材を教えて
+      </button>
     </div>
-    <button v-on:click="adviseFood" class="adviseBtn">
-      今日の食材を教えて
-    </button>
   </div>
 </template>
 
 <script>
+import firebase from "firebase"
 export default {
   data() {
     return {
@@ -20,23 +23,40 @@ export default {
   methods: {
     adviseFood() {
       alert("未実装")
+      firebase
+        .firestore()
+        .collection("foods")
+        .orderBy("createdAt") //並べ替え
+        .get()
+        .then((snapshot) => {
+          snapshot.docs.forEach((doc) => {
+            this.foods.push({
+              text: doc.data().text,
+              createdAt: doc.data().createdAt,
+            })
+          })
+        })
+      // function getRandomElement(array) {
+      // return array[Math.floor(Math.random() * array.length)];
     },
   },
 }
 </script>
 
 <style scoped>
-.form__wrapper {
-  padding: 50px;
+.all__wrapper {
+  padding: 30px;
   max-width: 700px;
 }
-.main-text {
+.description {
   padding: 20px;
+  min-width: 500px;
+}
+.main-text {
   font-weight: bold;
   font-size: 20px;
 }
 .sub-text {
-  padding: 20px;
   padding-top: 10px;
 }
 .adviseBtn {

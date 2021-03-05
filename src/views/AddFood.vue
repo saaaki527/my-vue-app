@@ -6,6 +6,7 @@
         type="text"
         v-model="inputValue"
         placeholder="例：にんじん,とうもろこし,白菜"
+        v-on:keyup.enter="addFood"
       />
       <div class="form__buttons">
         <button v-on:click="addFood" class="addBtn">
@@ -15,9 +16,9 @@
     </div>
     <div class="list__wrapper">
       <div class="list__title">今登録中の食材リスト</div>
-      <div class="list__items" v-for="food in foods" :key="food.id">
+      <li class="list__items" v-for="food in foods" :key="food.id">
         {{ food.text }}
-      </div>
+      </li>
     </div>
   </div>
 </template>
@@ -93,5 +94,15 @@ export default {
   border: none;
   border-radius: 15px;
   margin-left: 10px;
+}
+.list__wrapper {
+  padding-left: 20px;
+}
+.list__title {
+  font-weight: bold;
+  font-size: 20px;
+}
+.list__items {
+  padding-left: 20px;
 }
 </style>
