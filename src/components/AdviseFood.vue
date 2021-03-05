@@ -1,7 +1,9 @@
 <template>
   <div class="all__wrapper">
     <div class="description">
-      <div class="main-text">「この食材使ってごはん作ってみたら？」を提案</div>
+      <div class="main-text">
+        「この食材使ってごはん作ってみたら？」を提案
+      </div>
       <div class="sub-text">
         自炊してみたいけど何から作ればいいかわからない...自炊のメニューがいつも同じで飽きた...という人に
       </div>
@@ -22,7 +24,9 @@ export default {
   },
   methods: {
     adviseFood() {
-      alert("未実装")
+      alert(
+        "firebase.firestoreに入れたfoodからランダムで2つ表示する、ってのやりたい...んだけどなぁ...難しいなぁ..."
+      )
       firebase
         .firestore()
         .collection("foods")
@@ -46,7 +50,8 @@ export default {
 <style scoped>
 .all__wrapper {
   padding: 30px;
-  max-width: 700px;
+  width: 700px;
+  height: 300px;
 }
 .description {
   padding: 20px;
