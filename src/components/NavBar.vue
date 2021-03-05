@@ -1,4 +1,16 @@
-<template></template>
+<template>
+  <div class="nav__bar">
+    <router-link to="/" class="nav__logo nav__link">Food Picker</router-link>
+    <div class="nav__items">
+      <router-link to="/add-food" class="nav__item nav__link"
+        >addFood</router-link
+      >
+      <router-link to="/memo" class="nav__item nav__link">
+        Memo
+      </router-link>
+    </div>
+  </div>
+</template>
 
 <script>
 export default {}
@@ -34,7 +46,7 @@ export default {}
   display: flex;
 }
 .nav__item {
-  width: 8rem;
+  width: 100px;
   border-left: 1px solid #eee;
 }
 </style>

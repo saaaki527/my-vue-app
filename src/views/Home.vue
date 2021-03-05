@@ -1,17 +1,18 @@
 <template>
-  <div class="home">
-    <Advise />
+  <div class="home__wrapper">
+    <AdviseFood />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import Advise from "@/components/AdviseFood.vue"
-
+import AdviseFood from "../components/AdviseFood.vue"
 export default {
-  name: "Advise",
-  components: {
-    Advise,
-  },
+  components: { AdviseFood },
 }
 </script>
+
+<style scoped>
+.home__wrapper {
+  background-color: #f8f5f4;
+}
+</style>

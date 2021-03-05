@@ -21,6 +21,6 @@ export default {
   font-family: Helvetica, sans-serif;
 }
 body {
-  margin: 0;
+  margin: 100px 0;
 }
 </style>
